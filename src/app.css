@@ -1,2 +1,27 @@
 @import 'tailwindcss';
-@plugin '@tailwindcss/typography';
+
+@font-face {
+    font-family: 'Playfair Display';
+    src: url('/fonts/PlayfairDisplay-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'Playfair Display', serif;
+}
+
+/* Define global colors with fallback */
+:root {
+    --secondary-bg-color: oklch(0.69 0.1065 49.83); /* Primary color in OKLCH */
+    --secondary-bg-color-fallback: rgb(208, 135, 93); /* Fallback in RGB */
+    --primary-color: #8b5a2b; /* Amber-like color for buttons */
+    --primary-hover-color: #70471f; /* Darker amber for hover */
+    --secondary-color: #b9a03a; /* Light amber for hover background */
+    --text-color: #333333; /* Dark gray for text */
+    --secondary-text-color: #555555; /* Lighter gray for secondary text */
+    --bg-black: #000000; /* Black background */
+    --bg-white: #ffffff; /* White background */
+    --text-white: #ffffff; /* White text */
+    --text-black: #000000; /* Black text */
+}
