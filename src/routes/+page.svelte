@@ -4,6 +4,7 @@
   import Cta from '$lib/components/cta.svelte';
   import Recipe from '$lib/components/recipe.svelte';
   import Video from '$lib/components/video.svelte';
+  import MovingText from '$lib/components/movingText.svelte';
   import LenisInit from '$lib/components/lenisInit.svelte';
 </script>
 
@@ -23,7 +24,6 @@
       buttonLink="#discover" 
     />
   </div>
-
   <!-- CTA Component -->
   <div class="w-full flex justify-center">
     <Cta
@@ -44,9 +44,12 @@
     <Recipe />
   </div>
 
+  <!-- Moving Text Component -->
+  <MovingText />
+
+
   <!-- Video Component -->
   <div class="w-full">
     <Video />
   </div>
-
 </main>
