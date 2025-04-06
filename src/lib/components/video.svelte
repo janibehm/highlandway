@@ -43,7 +43,7 @@
     <div class="flex-1 text-center md:text-left">
       <h2 class="text-4xl font-bold text-white">{text}</h2>
       <p class="text-lg text-white mt-4">
-        Contact <a href="mailto:behmdigital@gmail.com" class="text-blue-400 hover:underline">behmdigital@gmail.com</a>
+        Contact <a href="mailto:digital@gmail.com" class="text-blue-400 hover:underline">digital@gmail.com</a>
       </p>
     </div>
 
