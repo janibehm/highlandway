@@ -8,7 +8,7 @@
   ];
   
   // Control animation speed (higher = slower)
-  export let animationDuration: number = 25; // seconds
+  export const  animationDuration: number = 25; // seconds
 </script>
 
 <div class="w-full bg-black py-4 overflow-hidden">
