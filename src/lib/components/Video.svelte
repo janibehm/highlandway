@@ -86,7 +86,7 @@
       <video
         bind:this={videoElement}
         src={videoSrc}
-        class="w-full max-h-[50vh] md:max-h-[60vh] rounded-lg shadow-lg object-cover"
+        class="w-full h-[70vh] md:h-[80vh] rounded-lg shadow-lg object-cover"
         autoplay
         muted
         playsinline
