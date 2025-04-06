@@ -37,13 +37,13 @@
   });
 </script>
 
-<section class="w-full h-screen flex items-center justify-center bg-black">
+<section class="w-full min-h-screen flex items-center justify-center bg-black px-4">
   <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16">
     <!-- Left Side: Text -->
     <div class="flex-1 text-center md:text-left">
       <h2 class="text-4xl font-bold text-white">{text}</h2>
       <p class="text-lg text-white mt-4">
-        Contact <a href="mailto:behmdigital@gmail.com" class="text-white hover:underline">behmdigital@gmail.com</a>
+        Contact <a href="mailto:behmdigital@gmail.com" class="text-blue-400 hover:underline">behmdigital@gmail.com</a>
       </p>
     </div>
 
@@ -52,7 +52,7 @@
       <video
         bind:this={videoElement}
         src={videoSrc}
-        class="w-full h-[60vh] rounded-lg shadow-lg object-cover"
+        class="w-full max-h-[50vh] md:max-h-[60vh] rounded-lg shadow-lg object-cover"
         autoplay
         muted
         playsinline

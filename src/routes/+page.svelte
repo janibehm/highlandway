@@ -1,24 +1,14 @@
 <script lang="ts">
-  import { initLenis, destroyLenis } from '$lib/stores/lenis';
   import Navigation from '$lib/components/Navigation.svelte';   
-  import Hero from '$lib/components/hero.svelte';
-  import Cta from '$lib/components/cta.svelte';
-  import Recipe from '$lib/components/recipe.svelte';
-  import Video from '$lib/components/video.svelte';
-/*   import Footer from '$lib/components/Footer.svelte'; */ // Import Footer component
-  import { onMount, onDestroy } from 'svelte';
-    
-    // Initialize Lenis for smooth scrolling
-    onMount(() => {
-        initLenis();
-    });
-    
-    // Clean up Lenis on component destroy
-    onDestroy(() => {
-        destroyLenis();
-    });
+  import Hero from '$lib/components/Hero.svelte';
+  import Cta from '$lib/components/CTA.svelte';
+  import Recipe from '$lib/components/Recipe.svelte';
+  import Video from '$lib/components/Video.svelte';
+  import LenisInit from '$lib/components/LenisInit.svelte';
 </script>
 
+<!-- Initialize Lenis -->
+<LenisInit />
 
 <main class="w-full flex flex-col">
   <!-- Navigation Component -->
@@ -59,6 +49,4 @@
     <Video />
   </div>
 
-<!-- Footer Component -->
-  <!-- <Footer /> -->
 </main>
