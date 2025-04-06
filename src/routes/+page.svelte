@@ -1,11 +1,11 @@
 <script lang="ts">
-  import Navigation from '$lib/components/navigation.svelte';   
-  import Hero from '$lib/components/hero.svelte';
-  import Cta from '$lib/components/cta.svelte';
-  import Recipe from '$lib/components/recipe.svelte';
-  import Video from '$lib/components/video.svelte';
-  import MovingText from '$lib/components/movingText.svelte';
-  import LenisInit from '$lib/components/lenisInit.svelte';
+  import Navigation from '$lib/components/Navigation.svelte';   
+  import Hero from '$lib/components/Hero.svelte';
+  import Cta from '$lib/components/CTA.svelte';
+  import Recipe from '$lib/components/Recipe.svelte';
+  import Video from '$lib/components/Video.svelte';
+  import MovingText from '$lib/components/MovingText.svelte';
+  import LenisInit from '$lib/components/LenisInit.svelte';
 </script>
 
 <!-- Initialize Lenis -->

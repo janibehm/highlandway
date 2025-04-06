@@ -1,7 +1,6 @@
 <script lang="ts">
   import { onMount } from "svelte";
   export let videoSrc = "/videos/whisky_club.mp4";
-  export let text = "Join the club";
   
   let email = "";
   let submitted = false;
