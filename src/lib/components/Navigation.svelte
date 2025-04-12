@@ -9,11 +9,7 @@
   <nav class="w-full text-white shadow-md" style="background-color: var(--bg-black);">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between items-center h-[11vh]">
-        <!-- Logo -->
-        <div class="flex-shrink-0">
-          <a href="/" class="text-2xl font-bold">Highland Way</a>
-        </div>
-  
+      
         <!-- Hamburger Menu -->
         <div class="md:hidden">
           <button

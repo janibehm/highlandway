@@ -6,18 +6,17 @@
 </script>
 
 <section class="w-full">
-  <div class="relative w-full h-150 bg-cover bg-center" style="background-image: url({imageSrc});">
+  <div class="relative w-full h-170 bg-cover bg-center" style="background-image: url({imageSrc});">
     <img 
       src={imageSrc} 
       alt={imageAlt} 
       class="hidden" 
     />
     <!-- Button -->
-    <div class="absolute inset-0 flex items-center justify-center">
+    <div class="absolute inset-x-0 top-0 md:inset-0 flex items-start md:items-center justify-center">
       <a 
         href={buttonLink} 
-        class="px-6 py-3 bg-amber-800 text-white font-semibold rounded hover:bg-amber-700 transition-transform hover:-translate-y-1 text-center mr-32"
-      
+        class="w-full md:w-auto px-6 py-3 bg-amber-800 text-white font-semibold rounded-b md:rounded hover:bg-amber-700 transition-transform hover:-translate-y-1 text-center md:mr-32"
       >
         {buttonText}
       </a>

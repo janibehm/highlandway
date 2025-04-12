@@ -6,6 +6,7 @@
     import Video from '$lib/components/Video.svelte';
     import MovingText from '$lib/components/MovingText.svelte';
     import LenisInit from '$lib/components/LenisInit.svelte';
+    import Footer from '$lib/components/Footer.svelte';
   </script>
   
   <!-- Initialize Lenis -->
@@ -18,7 +19,7 @@
     <!-- Hero Component -->
     <div class="w-full">
       <Hero 
-        title="Explore with us"
+        title="Highland Way"
         subtitle="Experience the journey from the Highlands to your glass."
         buttonText="Explore"
         buttonLink="#discover" 
@@ -46,10 +47,10 @@
   
     <!-- Moving Text Component -->
     <MovingText />
+  <div class="h-30 bg-black"></div>
   
-  
-    <!-- Video Component -->
-    <div class="w-full">
-      <Video />
-    </div>
+<!-- Footer Component -->
+<div class="w-full">
+  <Footer />
+</div>
   </main>
