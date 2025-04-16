@@ -1,6 +1,6 @@
 <script>
   import Navigation from '$lib/components/Navigation.svelte';
-  import Footer from '$lib/components/FooterLanding.svelte';
+  import Footer from '$lib/components/Footer.svelte';
 </script>
 
 <main class="w-full flex flex-col bg-black text-white">
