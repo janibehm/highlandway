@@ -6,7 +6,7 @@
     import Video from '$lib/components/Video.svelte';
     import MovingText from '$lib/components/MovingText.svelte';
     import LenisInit from '$lib/components/LenisInit.svelte';
-    import Footer from '$lib/components/Footer.svelte';
+	import FooterLanding from '$lib/components/FooterLanding.svelte';
   </script>
   
   <!-- Initialize Lenis -->
@@ -51,6 +51,6 @@
   
 <!-- Footer Component -->
 <div class="w-full">
-  <Footer />
+  <FooterLanding />
 </div>
   </main>

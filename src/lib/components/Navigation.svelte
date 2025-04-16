@@ -39,6 +39,7 @@
           <a href="/" class="hover:text-gray-300">Home</a>
           <a href="/about" class="hover:text-gray-300">About</a>
           <a href="/products" class="hover:text-gray-300">Products</a>
+          <a href="/blog" class="hover:text-gray-300">Blog</a>
           <a href="/contact" class="hover:text-gray-300">Contact</a>
         </div>
       </div>
@@ -50,6 +51,7 @@
         <a href="/" class="block px-4 py-2 hover:bg-gray-600">Home</a>
         <a href="/about" class="block px-4 py-2 hover:bg-gray-600">About</a>
         <a href="/products" class="block px-4 py-2 hover:bg-gray-600">Products</a>
+        <a href="/blog" class="block px-4 py-2 hover:bg-gray-600">Blog</a>
         <a href="/contact" class="block px-4 py-2 hover:bg-gray-600">Contact</a>
       </div>
     {/if}
