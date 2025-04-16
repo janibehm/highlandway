@@ -12,7 +12,7 @@
   <!-- Initialize Lenis -->
   <LenisInit />
   
-  <main class="w-full flex flex-col">
+  <main class="w-full flex flex-col bg-black">
     <!-- Navigation Component -->
     <Navigation /> 
   
