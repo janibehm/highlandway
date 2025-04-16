@@ -3,7 +3,6 @@
     import Hero from '$lib/components/Hero.svelte';
     import CTA from '$lib/components/CTA.svelte';
     import Recipe from '$lib/components/Recipe.svelte';
-    import Video from '$lib/components/Video.svelte';
     import MovingText from '$lib/components/MovingText.svelte';
     import LenisInit from '$lib/components/LenisInit.svelte';
 	import FooterLanding from '$lib/components/FooterLanding.svelte';
