@@ -22,7 +22,7 @@
         title="Highland Way"
         subtitle="Experience the journey from the Highlands to your glass."
         buttonText="Explore"
-        buttonLink="#discover" 
+        buttonLink="/blog" 
       />
     </div>
     <!-- CTA Component -->
