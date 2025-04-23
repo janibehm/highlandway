@@ -8,7 +8,7 @@ export const client = createClient({
 });
 
 // Define interfaces that match your Sanity schema
-interface Author {
+export interface Author {
   _id: string;
   name: string;
   slug: {
@@ -22,13 +22,13 @@ interface Author {
   };
 }
 
-interface Category {
+export interface Category {
   _id: string;
   title: string;
   description?: string;
 }
 
-interface MainImage {
+export interface MainImage {
   asset: {
     _id: string;
     url: string;
@@ -36,7 +36,7 @@ interface MainImage {
   alt: string;
 }
 
-interface Post {
+export interface Post {
   _id: string;
   title: string;
   slug: {
