@@ -3,8 +3,9 @@
   import Footer from '$lib/components/Footer.svelte';
   import LenisInit from '$lib/components/LenisInit.svelte';
   
-  export let data: { posts?: Array<{ title: string; excerpt: string; slug: { current: string }; publishedAt?: string; mainImage?: { asset?: { url?: string }; alt?: string } }> };
+  export let data: { posts?: Array<{ title: string; excerpt?: string; slug: { current: string }; publishedAt?: string; mainImage?: { asset?: { url?: string }; alt?: string } }> };
   const { posts = [] } = data;
+  console.log("Received posts:", posts); // Add this for debugging
   
   // Format date for display
   function formatDate(dateString: string) {
@@ -46,13 +47,14 @@
             <div class="p-6">
               <span class="text-sm text-gray-400">{formatDate(post.publishedAt || new Date().toISOString())}</span>
               <h2 class="text-2xl font-playfair mt-2 mb-3">{post.title}</h2>
-              <p class="mb-4">{post.excerpt}</p>
-              <a 
-                href={`/blog/${post.slug.current}`}
-                class="text-primary hover:text-primary-hover"
+              <!-- Display excerpt if available, otherwise show a default message -->
+              <p class="mb-4">{post.excerpt || "Read more about this Highland Way journal entry..."}</p>
+              <span 
+                class="text-primary hover:text-primary-hover cursor-pointer"
+                on:click={() => window.location.href = `/blog/${post.slug.current}`}
               >
                 Read More →
-              </a>
+              </span>
             </div>
           </div>
         {/each}
