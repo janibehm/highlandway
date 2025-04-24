@@ -38,6 +38,7 @@
                 src={post.mainImage.asset.url} 
                 alt={post.mainImage.alt || post.title} 
                 class="w-full h-56 object-cover"
+                loading="lazy"
               >
             {:else}
               <div class="w-full h-56 bg-gray-800 flex items-center justify-center">
@@ -49,12 +50,13 @@
               <h2 class="text-2xl font-playfair mt-2 mb-3">{post.title}</h2>
               <!-- Display excerpt if available, otherwise show a default message -->
               <p class="mb-4">{post.excerpt || "Read more about this Highland Way journal entry..."}</p>
-              <span 
-                class="text-primary hover:text-primary-hover cursor-pointer"
+              <button 
+                type="button"
+                class="text-primary hover:text-primary-hover cursor-pointer bg-transparent border-none p-0"
                 on:click={() => window.location.href = `/blog/${post.slug.current}`}
               >
                 Read More →
-              </span>
+              </button>
             </div>
           </div>
         {/each}
