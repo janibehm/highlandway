@@ -1,4 +1,5 @@
-import { createClient } from '@sanity/client'; 
+import { createClient } from '@sanity/client';
+import imageUrlBuilder from '@sanity/image-url';
 
 export const client = createClient({
   projectId: 'gesdkajg', 
@@ -6,6 +7,14 @@ export const client = createClient({
   useCdn: true,
   apiVersion: '2023-05-03',
 });
+
+// Initialize the image URL builder
+const builder = imageUrlBuilder(client);
+
+// Helper function to generate optimized image URLs
+export function urlFor(source: any) {
+  return builder.image(source);
+}
 
 // Define interfaces that match your Sanity schema
 export interface Author {
