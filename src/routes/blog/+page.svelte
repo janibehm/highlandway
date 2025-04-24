@@ -2,6 +2,7 @@
   import Navigation from '$lib/components/Navigation.svelte';
   import Footer from '$lib/components/Footer.svelte';
   import LenisInit from '$lib/components/LenisInit.svelte';
+  import { urlFor } from '$lib/sanity';
   
   export let data: { posts?: Array<{ title: string; excerpt?: string; slug: { current: string }; publishedAt?: string; mainImage?: { asset?: { url?: string }; alt?: string } }> };
   const { posts = [] } = data;
@@ -33,9 +34,14 @@
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {#each posts as post}
           <div class="bg-secondary-bg bg-opacity-10 rounded-lg overflow-hidden">
-            {#if post.mainImage?.asset?.url}
+            {#if post.mainImage}
               <img 
-                src={post.mainImage.asset.url} 
+                src={urlFor(post.mainImage)
+                  .width(600)
+                  .height(400)
+                  .format('webp')
+                  .quality(85)
+                  .url()}
                 alt={post.mainImage.alt || post.title} 
                 class="w-full h-56 object-cover"
                 loading="lazy"

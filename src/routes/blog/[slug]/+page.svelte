@@ -3,6 +3,7 @@
   import Navigation from '$lib/components/Navigation.svelte';
   import Footer from '$lib/components/Footer.svelte';
   import LenisInit from '$lib/components/LenisInit.svelte';
+  import { urlFor } from '$lib/sanity';
   
   export let data;
   const { post } = data;
@@ -75,11 +76,17 @@
         <span class="text-sm text-gray-400 block mb-4">{formatDate(post.publishedAt)}</span>
         <h1 class="text-4xl md:text-5xl font-playfair mb-8">{post.title}</h1>
         
-        {#if post.mainImage?.asset?.url}
+        {#if post.mainImage}
           <img 
-            src={post.mainImage.asset.url} 
+            src={urlFor(post.mainImage)
+              .width(1600)
+              .height(900)
+              .format('webp')
+              .quality(90)
+              .url()}
             alt={post.mainImage.alt || post.title} 
             class="w-full h-auto rounded-lg mb-8"
+            loading="eager"
           >
         {/if}
       </div>
