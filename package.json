@@ -44,6 +44,7 @@
 	"dependencies": {
 		"@sanity/client": "^6.29.0",
 		"@sanity/image-url": "^1.1.0",
-		"lenis": "^1.2.3"
+		"lenis": "^1.2.3",
+		"sharp": "^0.34.1"
 	}
 }
