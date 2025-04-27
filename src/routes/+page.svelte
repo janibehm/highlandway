@@ -17,10 +17,11 @@
   
     <!-- Hero Component -->
     <div class="w-full h-[75vh] relative overflow-hidden">
-        <div 
-            class="absolute inset-0 bg-fixed bg-center bg-no-repeat bg-cover transform-gpu"
-            style="background-image: url('/img/hero.webp');"
-        ></div>
+        <img 
+            src="/img/hero.webp" 
+            alt="Highland Way Background"
+            class="absolute inset-0 w-full h-full object-cover"
+        />
         <div class="absolute inset-0 bg-black/40 flex items-center">
             <div class="relative z-10 max-w-3xl px-6 md:px-10 ml-10 md:ml-24">
                 <h1 class="text-5xl md:text-6xl font-bold mb-4 drop-shadow-lg text-white">Highland Way</h1>
