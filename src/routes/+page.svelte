@@ -4,12 +4,9 @@
     import CTA from '$lib/components/CTA.svelte';
     import Recipe from '$lib/components/Recipe.svelte';
     import MovingText from '$lib/components/MovingText.svelte';
- /*    import LenisInit from '$lib/components/LenisInit.svelte'; */
     import FooterLanding from '$lib/components/FooterLanding.svelte';
 </script>
   
-<!-- Initialize Lenis -->
-<!-- <LenisInit /> -->
   
 <main class="w-full flex flex-col bg-black">
     <!-- Navigation Component -->
@@ -27,12 +24,12 @@
                 <h1 class="text-3xl md:text-6xl font-bold mb-4 drop-shadow-lg text-white">Highland Way</h1>
                 <p class="text-lg md:text-xl mb-6 drop-shadow-md text-white">Experience the journey from the Highlands to your glass.</p>
                 <a 
-                    href="/blog" 
+                    href="/about" 
                     class="inline-block px-6 py-3 bg-white text-gray-800 font-semibold rounded shadow hover:bg-gray-100 transition-transform hover:-translate-y-1"
                 >
                     Explore
                 </a>
-            </div>z
+            </div>
         </div>
     </div>
 
