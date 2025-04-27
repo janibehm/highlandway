@@ -42,7 +42,7 @@
 </script>
 
 <div id="smooth-content">
-    <div id="smooth-content-inner" class="max-w-[1440px] mx-auto">
+    <div id="smooth-content-inner">
         {@render children()}
     </div>
 </div>
