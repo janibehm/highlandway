@@ -4,12 +4,12 @@
     import CTA from '$lib/components/CTA.svelte';
     import Recipe from '$lib/components/Recipe.svelte';
     import MovingText from '$lib/components/MovingText.svelte';
-    import LenisInit from '$lib/components/LenisInit.svelte';
+ /*    import LenisInit from '$lib/components/LenisInit.svelte'; */
     import FooterLanding from '$lib/components/FooterLanding.svelte';
 </script>
   
 <!-- Initialize Lenis -->
-<LenisInit />
+<!-- <LenisInit /> -->
   
 <main class="w-full flex flex-col bg-black">
     <!-- Navigation Component -->

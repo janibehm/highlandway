@@ -1,11 +1,11 @@
 <script>
   import Navigation from '$lib/components/Navigation.svelte';
   import Footer from '$lib/components/Footer.svelte';
-  import LenisInit from '$lib/components/LenisInit.svelte';
+/*   import LenisInit from '$lib/components/LenisInit.svelte'; */
 
 
 </script>
-<LenisInit />
+<!-- <LenisInit /> -->
 <main class="w-full flex flex-col bg-black text-white">
   <Navigation />
   

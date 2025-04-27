@@ -26,20 +26,30 @@ body {
     --text-black: #000000; /* Black text */
 }
 
-/* Add these rules to your app.css file */
-
-/* Prevent image stretching during smooth scrolling */
-img {
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-  transform: translateZ(0);
-  -webkit-transform: translateZ(0);
+/* Add to your existing CSS */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: #000;
+  overscroll-behavior: none;
 }
 
-/* Apply to fixed/absolute positioned containers with images */
-.fixed-bg, 
-.absolute-bg,
-[class*="relative"] img {
-  will-change: transform;
-  transform-style: preserve-3d;
+body {
+  position: fixed;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+#smooth-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  background-color: #000;
 }

@@ -1,7 +1,7 @@
 <script>
   import Navigation from '$lib/components/Navigation.svelte';
   import Footer from '$lib/components/Footer.svelte';
-  import LenisInit from '$lib/components/LenisInit.svelte';
+ /*  import LenisInit from '$lib/components/LenisInit.svelte'; */
 </script>
 
 <svelte:head>
@@ -10,7 +10,7 @@
   <link rel="preload" href="/img/about/distillery-hero.webp" as="image" media="(min-width: 769px)">
 </svelte:head>
 
-<LenisInit/>
+<!-- <LenisInit/> -->
 <main class="w-full flex flex-col bg-black text-white">
   <Navigation />
   
@@ -27,9 +27,9 @@
       fetchpriority="high"
     />
   </div>
-  <div class="absolute inset-0 bg-black/30 flex items-center justify-center">
+<!--   <div class="absolute inset-0 bg-black/30 flex items-center justify-center">
     <h1 class="text-5xl md:text-7xl font-playfair text-white text-center drop-shadow-lg">Our Story</h1>
-  </div>
+  </div> -->
 </div>
   
   <!-- Introduction -->

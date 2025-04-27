@@ -1,7 +1,7 @@
 <script lang="ts">
   import Navigation from '$lib/components/Navigation.svelte';
   import Footer from '$lib/components/Footer.svelte';
-  import LenisInit from '$lib/components/LenisInit.svelte';
+/*   import LenisInit from '$lib/components/LenisInit.svelte'; */
   import { urlFor } from '$lib/sanity';
   
   export let data: { posts?: Array<{ title: string; excerpt?: string; slug: { current: string }; publishedAt?: string; mainImage?: { asset?: { url?: string }; alt?: string } }> };
@@ -19,7 +19,7 @@
   }
 </script>
 
-<LenisInit />
+<!-- <LenisInit /> -->
 <main class="w-full flex flex-col bg-black text-white">
   <Navigation />
   
