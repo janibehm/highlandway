@@ -3,25 +3,41 @@
   import Footer from '$lib/components/Footer.svelte';
   import LenisInit from '$lib/components/LenisInit.svelte';
 </script>
+
+<svelte:head>
+  <link rel="preload" href="/img/about/distillery-hero-mobile.webp" as="image" media="(max-width: 480px)">
+  <link rel="preload" href="/img/about/distillery-hero-tablet.webp" as="image" media="(min-width: 481px) and (max-width: 768px)">
+  <link rel="preload" href="/img/about/distillery-hero.webp" as="image" media="(min-width: 769px)">
+</svelte:head>
+
 <LenisInit/>
 <main class="w-full flex flex-col bg-black text-white">
   <Navigation />
   
   <!-- Hero Section -->
-  <div class="w-full h-[90vh] relative">
+  <div class="w-full h-[82vh] relative">
     <div class="absolute inset-0">
-      <img src="/img/about/distillery-hero.jpg" alt="Highland Way Distillery" class="w-full h-full object-cover opacity-60 mix-blend-overlay">
+      <img 
+        src="/img/about/distillery-hero-mobile.webp" 
+        srcset="/img/about/distillery-hero-mobile.webp 480w, /img/about/distillery-hero-tablet.webp 768w, /img/about/distillery-hero.webp 1440w"
+        sizes="100vw"
+        alt="Highland Way Distillery" 
+        class="w-full h-full object-cover"
+        loading="eager"
+        fetchpriority="high"
+      >
     </div>
-    <div class="absolute inset-0 flex items-center justify-center">
-      <h1 class="text-5xl md:text-7xl font-playfair text-white text-center">Our Story</h1>
-    </div>
+    <!-- <div class="absolute inset-0 bg-black/30 flex items-center justify-center">
+      <h1 class="text-5xl md:text-7xl font-playfair text-white text-center drop-shadow-lg">Our Story</h1>
+    </div> -->
   </div>
   
   <!-- Introduction -->
   <div class="container mx-auto py-16 px-4">
     <div class="max-w-3xl mx-auto mb-16 text-center">
       <p class="text-xl md:text-2xl font-light leading-relaxed">
-        Highland Way brings the spirit of Scottish whisky-making tradition to your glass. 
+        Highland Way brings the spirit of Scottish whisky-making tradition to
+        your glass. 
         Our journey began with a passion for authentic highland whisky and a vision to create 
         exceptional spirits that honor centuries of craftsmanship.
       </p>

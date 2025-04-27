@@ -9,13 +9,13 @@ if (!fs.existsSync(outputDir)) {
 }
 
 // Path to your original high-quality image
-const sourceImage = path.join(__dirname, 'static/source-images', 'hero-og.webp'); // Update this path!
+const sourceImage = path.join(__dirname, 'static/source-images', 'distillery-hero.webp'); // Update this path!
 
 // Image variants we want to generate
 const variants = [
-    { name: 'hero-mobile.webp', width: 480 },
-    { name: 'hero-tablet.webp', width: 768 },
-    { name: 'hero.webp', width: 1440 }
+    { name: 'distillery-hero-mobile.webp', width: 480 },
+    { name: 'distillery-hero-tablet.webp', width: 768 },
+    { name: 'distillery-hero.webp', width: 1440 }
 ];
 
 // Generate each variant
