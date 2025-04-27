@@ -1,10 +1,10 @@
 <script>
   import Navigation from '$lib/components/Navigation.svelte';
   import Footer from '$lib/components/Footer.svelte';
-/*   import LenisInit from '$lib/components/LenisInit.svelte'; */
+
 
 </script>
-<!-- <LenisInit /> -->
+
 <main class="w-full flex flex-col bg-black text-white">
   <Navigation />
   
@@ -27,7 +27,7 @@
     <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
       <!-- Recipe Card 1 -->
       <div class="bg-secondary-bg bg-opacity-10 rounded-lg overflow-hidden">
-        <img src="/img/recipes/recipe-highland-sour.jpg" alt="Highland Sour" class="w-full h-64 object-cover">
+        <img src="/img/recipes/recipe-highland-sour.webp" alt="Highland Sour" class="w-full h-64 object-cover">
         <div class="p-6">
           <span class="bg-primary text-white text-xs px-2 py-1 rounded">Cocktail</span>
           <h2 class="text-2xl font-playfair mt-4 mb-2">Highland Sour</h2>
@@ -59,7 +59,7 @@
       
       <!-- Recipe Card 2 -->
       <div class="bg-secondary-bg bg-opacity-10 rounded-lg overflow-hidden">
-        <img src="/img/recipes/recipe-smoked-old-fashioned.jpg" alt="Smoked Old Fashioned" class="w-full h-64 object-cover">
+        <img src="/img/recipes/recipe-smoked-old-fashioned.webp" alt="Smoked Old Fashioned" class="w-full h-64 object-cover">
         <div class="p-6">
           <span class="bg-primary text-white text-xs px-2 py-1 rounded">Cocktail</span>
           <h2 class="text-2xl font-playfair mt-4 mb-2">Smoked Old Fashioned</h2>
@@ -91,7 +91,7 @@
       
       <!-- Recipe Card 3 -->
       <div class="bg-secondary-bg bg-opacity-10 rounded-lg overflow-hidden">
-        <img src="/img/recipes/recipe-whisky-glazed-salmon.jpg" alt="Whisky Glazed Salmon" class="w-full h-64 object-cover">
+        <img src="/img/recipes/recipe-whisky-glazed-salmon.webp" alt="Whisky Glazed Salmon" class="w-full h-64 object-cover">
         <div class="p-6">
           <span class="bg-secondary text-white text-xs px-2 py-1 rounded">Food Pairing</span>
           <h2 class="text-2xl font-playfair mt-4 mb-2">Whisky Glazed Salmon</h2>
@@ -131,7 +131,7 @@
       
       <!-- Recipe Card 4 -->
       <div class="bg-secondary-bg bg-opacity-10 rounded-lg overflow-hidden">
-        <img src="/img/recipes/recipe-highland-hot-toddy.jpg" alt="Highland Hot Toddy" class="w-full h-64 object-cover">
+        <img src="/img/recipes/recipe-highland-hot-toddy.webp" alt="Highland Hot Toddy" class="w-full h-64 object-cover">
         <div class="p-6">
           <span class="bg-primary text-white text-xs px-2 py-1 rounded">Cocktail</span>
           <span class="bg-gray-700 text-white text-xs px-2 py-1 rounded ml-2">Seasonal</span>
@@ -166,7 +166,7 @@
       
       <!-- Recipe Card 5 -->
       <div class="bg-secondary-bg bg-opacity-10 rounded-lg overflow-hidden">
-        <img src="/img/recipes/recipe-whisky-chocolate-mousse.jpg" alt="Whisky Chocolate Mousse" class="w-full h-64 object-cover">
+        <img src="/img/recipes/recipe-whisky-chocolate-mousse.webp" alt="Whisky Chocolate Mousse" class="w-full h-64 object-cover">
         <div class="p-6">
           <span class="bg-secondary text-white text-xs px-2 py-1 rounded">Food Pairing</span>
           <h2 class="text-2xl font-playfair mt-4 mb-2">Whisky Chocolate Mousse</h2>
@@ -207,7 +207,7 @@
       
       <!-- Recipe Card 6 -->
       <div class="bg-secondary-bg bg-opacity-10 rounded-lg overflow-hidden">
-        <img src="/img/recipes/recipe-highland-manhattan.jpg" alt="Highland Manhattan" class="w-full h-64 object-cover">
+        <img src="/img/recipes/recipe-highland-manhattan.webp" alt="Highland Manhattan" class="w-full h-64 object-cover">
         <div class="p-6">
           <span class="bg-primary text-white text-xs px-2 py-1 rounded">Cocktail</span>
           <h2 class="text-2xl font-playfair mt-4 mb-2">Highland Manhattan</h2>
