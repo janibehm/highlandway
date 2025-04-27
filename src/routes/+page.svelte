@@ -32,7 +32,7 @@
                 >
                     Explore
                 </a>
-            </div>
+            </div>z
         </div>
     </div>
 
