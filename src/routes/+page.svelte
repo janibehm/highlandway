@@ -5,25 +5,36 @@
     import Recipe from '$lib/components/Recipe.svelte';
     import MovingText from '$lib/components/MovingText.svelte';
     import LenisInit from '$lib/components/LenisInit.svelte';
-	import FooterLanding from '$lib/components/FooterLanding.svelte';
-  </script>
+    import FooterLanding from '$lib/components/FooterLanding.svelte';
+</script>
   
-  <!-- Initialize Lenis -->
-  <LenisInit />
+<!-- Initialize Lenis -->
+<LenisInit />
   
-  <main class="w-full flex flex-col bg-black">
+<main class="w-full flex flex-col bg-black">
     <!-- Navigation Component -->
     <Navigation /> 
   
     <!-- Hero Component -->
-    <div class="w-full">
-      <Hero 
-        title="Highland Way"
-        subtitle="Experience the journey from the Highlands to your glass."
-        buttonText="Explore"
-        buttonLink="/blog" 
-      />
+    <div class="w-full h-[75vh] relative overflow-hidden">
+        <div 
+            class="absolute inset-0 bg-fixed bg-center bg-no-repeat bg-cover transform-gpu"
+            style="background-image: url('/img/hero.webp');"
+        ></div>
+        <div class="absolute inset-0 bg-black/40 flex items-center">
+            <div class="relative z-10 max-w-3xl px-6 md:px-10 ml-10 md:ml-24">
+                <h1 class="text-5xl md:text-6xl font-bold mb-4 drop-shadow-lg text-white">Highland Way</h1>
+                <p class="text-lg md:text-xl mb-6 drop-shadow-md text-white">Experience the journey from the Highlands to your glass.</p>
+                <a 
+                    href="/blog" 
+                    class="inline-block px-6 py-3 bg-white text-gray-800 font-semibold rounded shadow hover:bg-gray-100 transition-transform hover:-translate-y-1"
+                >
+                    Explore
+                </a>
+            </div>
+        </div>
     </div>
+
     <!-- CTA Component -->
     <div class="w-full flex justify-center">
       <CTA
@@ -38,18 +49,16 @@
         imageAlt="Virginia Highland Whisky"
       />
     </div>
-  
-    <!-- Recipe Component -->
+
+    <!-- Rest of your components remain unchanged -->
     <div class="w-full">
       <Recipe />
     </div>
   
-    <!-- Moving Text Component -->
     <MovingText />
-  <div class="h-30 bg-black"></div>
+    <div class="h-30 bg-black"></div>
   
-<!-- Footer Component -->
-<div class="w-full">
-  <FooterLanding />
-</div>
-  </main>
+    <div class="w-full">
+      <FooterLanding />
+    </div>
+</main>

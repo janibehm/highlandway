@@ -15,22 +15,15 @@
   <Navigation />
   
   <!-- Hero Section -->
-  <div class="w-full h-[82vh] relative">
-    <div class="absolute inset-0">
-      <img 
-        src="/img/about/distillery-hero-mobile.webp" 
-        srcset="/img/about/distillery-hero-mobile.webp 480w, /img/about/distillery-hero-tablet.webp 768w, /img/about/distillery-hero.webp 1440w"
-        sizes="100vw"
-        alt="Highland Way Distillery" 
-        class="w-full h-full object-cover"
-        loading="eager"
-        fetchpriority="high"
-      >
-    </div>
-    <!-- <div class="absolute inset-0 bg-black/30 flex items-center justify-center">
-      <h1 class="text-5xl md:text-7xl font-playfair text-white text-center drop-shadow-lg">Our Story</h1>
-    </div> -->
-  </div>
+  <div class="w-full h-[82vh] relative overflow-hidden">
+  <div 
+    class="absolute inset-0 bg-fixed bg-center bg-no-repeat bg-cover transform-gpu"
+    style="background-image: url('/img/about/distillery-hero.webp');"
+  ></div>
+<!--   <div class="absolute inset-0 bg-black/30 flex items-center justify-center">
+    <h1 class="text-5xl md:text-7xl font-playfair text-white text-center drop-shadow-lg">Our Story</h1>
+  </div> -->
+</div>
   
   <!-- Introduction -->
   <div class="container mx-auto py-16 px-4">
