@@ -1,6 +1,5 @@
 <script lang="ts">
     import Navigation from '$lib/components/Navigation.svelte';   
-    import Hero from '$lib/components/Hero.svelte';
     import CTA from '$lib/components/CTA.svelte';
     import Recipe from '$lib/components/Recipe.svelte';
     import MovingText from '$lib/components/MovingText.svelte';
