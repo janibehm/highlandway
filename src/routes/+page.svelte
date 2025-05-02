@@ -4,6 +4,8 @@
     import Recipe from '$lib/components/Recipe.svelte';
     import MovingText from '$lib/components/MovingText.svelte';
     import FooterLanding from '$lib/components/FooterLanding.svelte';
+
+    let triggerNode: HTMLElement | null = null; // Reference to the section before the footer
 </script>
   
   
@@ -47,8 +49,8 @@
       />
     </div>
 
-    <!-- Rest of your components remain unchanged -->
-    <div class="w-full">
+    <!-- Section before Footer -->
+    <div class="w-full" >
       <Recipe />
     </div>
   
@@ -72,6 +74,7 @@
       </div>
     </div>
   
+    <!-- Footer -->
     <div class="w-full">
       <FooterLanding />
     </div>

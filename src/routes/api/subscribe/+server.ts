@@ -1,6 +1,8 @@
 import { json } from '@sveltejs/kit';
 import { env } from '$env/dynamic/private';
 
+export const prerender = false; // Disable prerendering for this route
+
 export async function POST({ request }) {
   const { email } = await request.json();
 

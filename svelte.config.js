@@ -1,11 +1,16 @@
-import adapter from '@sveltejs/adapter-vercel';
-import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
+import adapter from '@sveltejs/adapter-static';
 
-const config = {
-  preprocess: vitePreprocess(),
-  kit: {
-    adapter: adapter(),
-  }
+export default {
+    kit: {
+        adapter: adapter({
+            pages: 'build',
+            assets: 'build',
+            fallback: null,
+            precompress: false,
+            strict: false // Suppress errors for dynamic routes
+        }),
+        prerender: {
+            entries: ['*']
+        }
+    }
 };
-
-export default config;
