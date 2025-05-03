@@ -5,12 +5,16 @@ export default {
         adapter: adapter({
             pages: 'build',
             assets: 'build',
-            fallback: null,
+            fallback: null, // No SPA fallback
             precompress: false,
-            strict: false // Suppress errors for dynamic routes
+            strict: true // Ensure errors are raised for non-prerenderable routes
         }),
         prerender: {
-            entries: ['*']
+            entries: [
+                '*', // Include all static routes
+                '!/api/subscribe', // Exclude dynamic API route
+                '!/blog/[slug]' // Exclude dynamic blog route
+            ]
         }
     }
 };
