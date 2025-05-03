@@ -1,5 +1,7 @@
 import { getPosts } from '$lib/sanity';
 
+export const prerender = true; 
+
 export async function load() {
   try {
     const posts = await getPosts();
