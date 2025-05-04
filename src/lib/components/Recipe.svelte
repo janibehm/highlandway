@@ -13,10 +13,10 @@
       class="hidden" 
     />
     <!-- Button -->
-    <div class="absolute inset-x-0 top-0 md:inset-0 flex items-start md:items-center justify-center">
+    <div class="absolute inset-x-0 top-0 flex items-center justify-center">
       <a 
         href={buttonLink} 
-        class="w-full md:w-auto px-6 py-3 bg-amber-800 text-white font-semibold rounded-b md:rounded hover:bg-amber-700 transition-transform hover:-translate-y-1 text-center md:mr-32"
+        class="w-full px-6 py-3 bg-amber-800 text-white font-semibold rounded-b hover:bg-amber-700 transition-transform hover:-translate-y-1 text-center"
       >
         {buttonText}
       </a>

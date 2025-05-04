@@ -21,15 +21,10 @@
             class="absolute inset-0 w-full h-full object-cover"
         />
         <div class="absolute inset-0 bg-black/40 flex flex-col justify-start md:justify-center">
-            <div class="relative z-10 max-w-3xl px-6 pt-4 md:pt-0 md:px-10 md:ml-12">
-                <h1 class="text-3xl md:text-6xl font-bold mb-4 drop-shadow-lg text-white">Highland Way</h1>
-                <p class="text-lg md:text-xl mb-6 drop-shadow-md text-white">Experience the journey from the Highlands to your glass.</p>
-                <a 
-                    href="/about" 
-                    class="inline-block px-6 py-3 bg-white text-gray-800 font-semibold rounded shadow hover:bg-gray-100 transition-transform hover:-translate-y-1"
-                >
-                    Explore
-                </a>
+            <div class="relative z-10 max-w-2xl px-6 pt-4 md:pt-0 md:px-10 md:ml-12">
+                <p class="text-2xl md:text-4xl lg:text-5xl font-bold mb-6 drop-shadow-md text-white leading-normal md:leading-relaxed">
+                    Experience the journey from the Highlands to your glass.
+                </p>
             </div>
         </div>
     </div>

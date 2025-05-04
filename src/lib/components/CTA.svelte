@@ -11,12 +11,12 @@
 </script>
 
 <section class="w-full xl:py-86 pt-36 pb-38 px-6 bg-black" style="background-color: var(--bg-black);">
-  <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-8 md:gap-16">
-    <div class="flex-1">
+  <div class="max-w-7xl mx-auto flex flex-col items-center gap-8">
+    <div class="flex-1 text-center">
       <h2 class="text-4xl mb-6 font-bold" style="color: var(--text-white);">{title}</h2>
       <p class="text-lg leading-relaxed mb-6" style="color: var(--text-white);">{description}</p>
-      <p class="text-lg leading-relaxed mb-6" style="var(--text-white);">{secondaryText}</p>
-      <div class="flex flex-col sm:flex-row gap-4 mt-8">
+      <p class="text-lg leading-relaxed mb-6" style="color: var(--text-white);">{secondaryText}</p>
+      <div class="flex flex-col sm:flex-row gap-4 mt-8 justify-center">
         <a 
           href={primaryButtonLink} 
           class="px-6 py-3 font-semibold rounded transition-transform hover:-translate-y-1 text-center"
