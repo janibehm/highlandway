@@ -16,16 +16,14 @@
     <!-- Hero Component -->
     <div class="w-full h-[75vh] relative overflow-hidden">
         <img 
-            src="/img/hero.webp" 
+            src="/img/whisky-hero.webp" 
             alt="Highland Way Background"
             class="absolute inset-0 w-full h-full object-cover"
         />
-        <div class="absolute inset-0 bg-black/40 flex flex-col justify-start md:justify-center">
-            <div class="relative z-10 max-w-2xl px-6 pt-4 md:pt-0 md:px-10 md:ml-12">
-                <p class="text-2xl md:text-4xl lg:text-5xl font-bold mb-6 drop-shadow-md text-white leading-normal md:leading-relaxed">
-                    Experience the journey from the Highlands to your glass.
-                </p>
-            </div>
+        <div class="absolute inset-0 bg-black/40 flex flex-col justify-end items-center pb-24 xl:pb-8">
+            <h1 class="text-2xl md:text-4xl lg:text-5xl font-bold text-white drop-shadow-md text-center leading-normal md:leading-relaxed">
+                Experience the journey from the Highlands to your glass.
+            </h1>
         </div>
     </div>
 
