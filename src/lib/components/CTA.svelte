@@ -10,7 +10,7 @@
   export let imageAlt: string;
 </script>
 
-<section class="w-full py-18 pb-38 px-6 bg-black xl:pt-34" style="background-color: var(--bg-black);">
+<section class="w-full py-18 xl:pb-38 px-6 bg-black xl:pt-34" style="background-color: var(--bg-black);">
   <div class="max-w-7xl mx-auto flex flex-col xl:flex-row items-center gap-8">
     <div class="flex-1 text-center xl:text-left xl:mt-8">
       <h2 class="text-4xl mb-6 font-bold" style="color: var(--text-white);">{title}</h2>
