@@ -3,11 +3,23 @@
   export let videoSrc = "/videos/whisky_club.mp4";
 
   let videoElement = null as HTMLVideoElement | null;
+  let videoLoaded = false;
+
+  // Function to load the video source
+  function loadVideo() {
+    if (videoElement && !videoLoaded) {
+      videoElement.src = videoSrc;
+      videoLoaded = true;
+    }
+  }
 
   // Function to handle autoplay when the video is in the viewport
   function handleIntersection(entries: IntersectionObserverEntry[]) {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
+        // Load the video if it hasn't been loaded yet
+        loadVideo();
+        
         if (videoElement) {
           videoElement.play();
         }
@@ -22,7 +34,8 @@
   // Set up IntersectionObserver
   onMount(() => {
     const observer = new IntersectionObserver(handleIntersection, {
-      threshold: 0.5, // Trigger when 50% of the video is visible
+      threshold: 0.1, // Lower threshold to start loading earlier
+      rootMargin: "100px", // Start loading when within 100px of viewport
     });
     if (videoElement) {
       observer.observe(videoElement);
@@ -39,12 +52,12 @@
 <div class="w-full flex justify-center">
   <video
     bind:this={videoElement}
-    src={videoSrc}
-    class="w-[90vw] xl:h-[50vh] h-[50vh] xl:h-[100vh] md:h-[50vh] rounded-lg shadow-lg object-cover"
+    class="w-[90vw] md:w-[80vw] xl:w-[50vw] h-[50vh] md:h-[75vh] xl:h-[95vh] rounded-lg shadow-lg object-cover"
+    data-src={videoSrc}
     autoplay
     muted
     playsinline
-    preload="auto"
+    preload="none"
   >
   </video>
 </div>
