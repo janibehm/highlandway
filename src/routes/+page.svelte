@@ -108,28 +108,28 @@
 
 @-webkit-keyframes animateBubble {
     0% {
-        margin-top: 1000px;
+        margin-top: 100px;
     }
     100% {
-        margin-top: -50%;
+        margin-top: -100%;
     }
 }
 
 @-moz-keyframes animateBubble {
     0% {
-        margin-top: 1000px;
+        margin-top: 100px;
     }
     100% {
-        margin-top: -50%;
+        margin-top: -100%;
     }
 }
 
 @keyframes animateBubble {
     0% {
-        margin-top: 1000px;
+        margin-top: 100px;
     }
     100% {
-        margin-top: -50%;
+        margin-top: -100%;
     }
 }
 
