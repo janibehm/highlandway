@@ -14,8 +14,8 @@
                 <a href="/" class="hover:text-gray-300">Highland Way</a>
             </div>
 
-            <!-- Hamburger Menu -->
-            <div class="md:hidden">
+            <!-- Hamburger Menu - Visible on mobile and tablet (anything below xl) -->
+            <div class="block xl:hidden">
                 <button
                     class="text-gray-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-white"
                     on:click={toggleMenu}
@@ -38,8 +38,8 @@
                 </button>
             </div>
 
-            <!-- Menu Links -->
-            <div class="hidden md:flex space-x-8">
+            <!-- Menu Links - Only visible on XL screens -->
+            <div class="hidden xl:flex space-x-8">
                 <a href="/" class="hover:text-gray-300">Home</a>
                 <a href="/about" class="hover:text-gray-300">About</a>
                 <a href="/products" class="hover:text-gray-300">Products</a>
@@ -50,9 +50,9 @@
         </div>
     </div>
 
-    <!-- Mobile Menu - Now Overlay -->
+    <!-- Mobile/Tablet Menu - Now Overlay -->
     {#if isMenuOpen}
-        <div class="md:hidden fixed top-[11vh] left-0 right-0 bg-black bg-opacity-95 z-50 shadow-lg border-t border-gray-800">
+        <div class="xl:hidden fixed top-[11vh] left-0 right-0 bg-black bg-opacity-95 z-50 shadow-lg border-t border-gray-800">
             <div class="py-2">
                 <a href="/" class="block px-6 py-3 hover:bg-gray-900 transition-colors">Home</a>
                 <a href="/about" class="block px-6 py-3 hover:bg-gray-900 transition-colors">About</a>

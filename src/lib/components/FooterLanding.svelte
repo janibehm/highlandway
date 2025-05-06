@@ -1,7 +1,7 @@
 <script lang="ts">
   import Subscribe from './Subscribe.svelte';
   import Video from './Video.svelte';
-  export let year: number = new Date().getFullYear();
+  // export let year: number = new Date().getFullYear();
 </script>
 
 <footer class="w-full bg-black px-4 py-8 h-auto">
