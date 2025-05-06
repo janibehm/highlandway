@@ -1,6 +1,5 @@
 <script lang="ts">
   import Navigation from '$lib/components/Navigation.svelte';
-  import Footer from '$lib/components/Footer.svelte';
   import { urlFor } from '$lib/sanity';
   import { onMount } from 'svelte';
   import { browser } from '$app/environment';
@@ -109,6 +108,4 @@
       </a>
     </div>
   </div>
-  
-  <Footer />
 </main>

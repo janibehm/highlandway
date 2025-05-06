@@ -1,7 +1,5 @@
 <script>
   import Navigation from '$lib/components/Navigation.svelte';
-  import Footer from '$lib/components/Footer.svelte';
-
 
 </script>
 
@@ -54,6 +52,4 @@
         </a>
       </div>
     </div>
-  
-  <Footer />
 </main>

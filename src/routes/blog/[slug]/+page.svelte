@@ -1,8 +1,7 @@
 <script lang="ts">
   import { PortableText } from '@portabletext/svelte';
   import Navigation from '$lib/components/Navigation.svelte';
-  import Footer from '$lib/components/Footer.svelte';
-/*   import LenisInit from '$lib/components/LenisInit.svelte'; */
+  import LenisInit from '$lib/components/LenisInit.svelte';
   import { urlFor } from '$lib/sanity';
   
   export let data;
@@ -59,9 +58,20 @@
     border-left: 4px solid var(--color-primary, #daa520);
     background-color: rgba(255, 255, 255, 0.05);
   }
+
+  /* Style for navigation row */
+  .navigation-row {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+  }
 </style>
 
-<!-- <LenisInit /> -->
+<LenisInit />
+
 <main class="w-full flex flex-col bg-black text-white">
   <Navigation />
   
@@ -96,13 +106,11 @@
         <PortableText value={post.body} />
       </div>
       
-      <!-- Back to Blog Link -->
-      <div class="max-w-4xl mx-auto mt-12">
+      <!-- Navigation Row with only Back to Blog link -->
+      <div class="max-w-4xl mx-auto navigation-row">
         <a href="/blog" class="text-primary hover:text-primary-hover">← Back to Blog</a>
       </div>
     {/if}
   </div>
-  
-  <Footer />
 </main>
 

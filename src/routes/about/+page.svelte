@@ -1,6 +1,5 @@
 <script>
   import Navigation from '$lib/components/Navigation.svelte';
-  import Footer from '$lib/components/Footer.svelte';
  /*  import LenisInit from '$lib/components/LenisInit.svelte'; */
 </script>
 
@@ -125,6 +124,4 @@
       </a>
     </div>
   </div>
-  
-  <Footer />
 </main>

@@ -1,42 +1,30 @@
 <script lang="ts">
   import { onMount, onDestroy } from 'svelte';
-  import { initLenis, destroyLenis } from '$lib/stores/lenis';
+  import { initLenis, destroyLenis, lenisStore } from '$lib/stores/lenis';
+  import type { LenisInstance } from '$lib/stores/lenis-types';
 
-  // Minimum width for enabling Lenis (tablet size)
-  const MIN_WIDTH_FOR_LENIS = 768;
-  
   onMount(() => {
-    // Check if screen width is tablet or larger
-    const isLargeScreen = window.innerWidth >= MIN_WIDTH_FOR_LENIS;
+    console.log('LenisInit component mounted');
     
-    // Only initialize Lenis on larger screens
-    if (isLargeScreen) {
-      initLenis();
+    // Always initialize Lenis regardless of screen size
+    console.log('Initializing Lenis');
+    const lenis = initLenis() as LenisInstance;
+    console.log('Lenis initialized:', lenis);
+    
+    // Make scrollToTop available as a global method
+    if (typeof window !== 'undefined') {
+      (window as any).scrollToTop = () => {
+        if (lenis && 'scrollTo' in lenis) {
+          lenis.scrollTo(0);
+        } else {
+          window.scrollTo(0, 0);
+        }
+      };
     }
     
-    // Handle resize/orientation changes
-    const handleResize = () => {
-      const isCurrentlyLargeScreen = window.innerWidth >= MIN_WIDTH_FOR_LENIS;
-      
-      // If changed from small to large screen, initialize Lenis
-      if (!isLargeScreen && isCurrentlyLargeScreen) {
-        initLenis();
-      }
-      
-      // If changed from large to small screen, destroy Lenis
-      if (isLargeScreen && !isCurrentlyLargeScreen) {
-        destroyLenis();
-      }
-    };
-    
-    window.addEventListener('resize', handleResize);
-    
-    // Cleanup
+    // Cleanup on component destroy
     return () => {
-      window.removeEventListener('resize', handleResize);
-      if (isLargeScreen) {
-        destroyLenis();
-      }
+      destroyLenis();
     };
   });
 </script>

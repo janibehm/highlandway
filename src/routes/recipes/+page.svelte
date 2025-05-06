@@ -1,7 +1,5 @@
 <script>
   import Navigation from '$lib/components/Navigation.svelte';
-  import Footer from '$lib/components/Footer.svelte';
-
 
 </script>
 
@@ -260,8 +258,4 @@
       <a href="/contact" class="bg-primary hover:bg-primary-hover text-white py-3 px-8 rounded inline-block">Submit Your Recipe</a>
     </div>
   </div>
-  
- 
-  
-  <Footer />
 </main>

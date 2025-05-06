@@ -40,7 +40,7 @@
         </div>
         <!-- Text -->
         <div class="absolute inset-0 flex flex-col justify-start items-center px-4 pt-12  z-20">
-          <h1 class="text-4xl md:text-4xl lg:text-5xl xl:text-6xl font-black text-black drop-shadow-lg text-center leading-tight max-w-xl">
+          <h1 class="text-4xl md:text-4xl lg:text-5xl xl:text-6xl font-black text-black drop-shadow-xl text-center leading-tight max-w-xl heading-bold">
               Experience the journey<br> 
               from the Highlands<br> 
               to your glass.
@@ -421,5 +421,27 @@
   /* Override any conflicting styles */
   :global(.overflow-y-auto) {
     overflow-y: visible !important;
+  }
+
+  /* Extra bold heading style */
+  .heading-bold {
+    letter-spacing: 2px;
+    text-shadow: 
+      0 0 1px #000,
+      0 0 2px #000,
+      0 0 3px rgba(0, 0, 0, 0.3);
+    font-stretch: expanded;
+    -webkit-text-stroke: 0.7px black;
+    /* Apply slightly darker color for added weight perception */
+    color: rgb(0, 0, 0);
+    /* Apply modern font feature that makes text appear bolder */
+    font-variation-settings: 'wght' 900;
+    font-optical-sizing: auto;
+    /* Add extra text-shadow for more depth */
+    text-shadow: 
+      0 0 1px #000,
+      0 0 2px #000, 
+      0 0 4px rgba(0, 0, 0, 0.5),
+      0 0 8px rgba(0, 0, 0, 0.1);
   }
 </style>
