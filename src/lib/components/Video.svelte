@@ -36,21 +36,18 @@
   });
 </script>
 
-  
+<div class="w-full flex justify-center">
+  <video
+    bind:this={videoElement}
+    src={videoSrc}
+    class="w-[90vw] xl:h-[50vh] h-[50vh] xl:h-[100vh] md:h-[50vh] rounded-lg shadow-lg object-cover"
+    autoplay
+    muted
+    playsinline
+    preload="auto"
+  >
+  </video>
+</div>
 
 
-    <div class="flex-1">
-      <video
-        bind:this={videoElement}
-        src={videoSrc}
-        class="w-full h-[50vh] xl:h-[90vh] md:h-[50vh] rounded-lg shadow-lg object-cover"
-        autoplay
-        muted
-        playsinline
-        preload="auto"
-      >
-      </video>
-    </div>
-
-  
 
