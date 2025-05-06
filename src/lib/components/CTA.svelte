@@ -10,13 +10,13 @@
   export let imageAlt: string;
 </script>
 
-<section class="w-full py-18 pb-38 px-6 bg-black" style="background-color: var(--bg-black);">
-  <div class="max-w-7xl mx-auto flex flex-col items-center gap-8">
-    <div class="flex-1 text-center">
+<section class="w-full py-18 pb-38 px-6 bg-black xl:pt-34" style="background-color: var(--bg-black);">
+  <div class="max-w-7xl mx-auto flex flex-col xl:flex-row items-center gap-8">
+    <div class="flex-1 text-center xl:text-left xl:mt-8">
       <h2 class="text-4xl mb-6 font-bold" style="color: var(--text-white);">{title}</h2>
       <p class="text-lg leading-relaxed mb-6" style="color: var(--text-white);">{description}</p>
       <p class="text-lg leading-relaxed mb-6" style="color: var(--text-white);">{secondaryText}</p>
-      <div class="flex flex-col sm:flex-row gap-4 mt-8 mb-6 justify-center">
+      <div class="flex flex-col sm:flex-row gap-4 mt-8 mb-6 xl:justify-start justify-center">
         <a 
           href={primaryButtonLink} 
           class="px-6 py-3 font-semibold rounded transition-transform hover:-translate-y-1 text-center"
@@ -65,7 +65,7 @@
         </a>
       </div>
     </div>
-    <div class="flex-1 rounded-lg overflow-hidden shadow-xl">
+    <div class="flex-1 rounded-lg overflow-hidden shadow-xl xl:order-last order-first">
       <img 
         src={imageSrc} 
         alt={imageAlt} 

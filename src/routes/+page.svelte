@@ -39,8 +39,8 @@
           </div>
         </div>
         <!-- Text -->
-        <div class="absolute inset-0 flex flex-col justify-start items-center px-4 pt-2 z-20">
-          <h1 class="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black text-black drop-shadow-lg text-center leading-tight max-w-xl">
+        <div class="absolute inset-0 flex flex-col justify-start items-center px-4 pt-8 z-20">
+          <h1 class="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black text-white drop-shadow-lg text-center leading-tight max-w-xl">
               Experience the journey<br> 
               from the Highlands<br> 
               to your glass.
