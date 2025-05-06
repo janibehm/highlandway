@@ -4,7 +4,6 @@
     import Recipe from '$lib/components/Recipe.svelte';
     import MovingText from '$lib/components/MovingText.svelte';
     import FooterLanding from '$lib/components/FooterLanding.svelte';
-
     let triggerNode: HTMLElement | null = null; // Reference to the section before the footer
 </script>
   
@@ -14,12 +13,16 @@
     <Navigation /> 
   
     <!-- Hero Component -->
-    <div class="w-full h-[90vh] relative overflow-hidden">
-        <img 
-            src="/img/whisky-hero.webp" 
-            alt="Highland Way Background"
-            class="absolute inset-0 w-full h-full object-cover z-0"
-        />
+    <div class="w-full aspect-[16/9] sm:aspect-[21/9] lg:aspect-[32/9]  relative overflow-hidden">
+        <!-- Enhanced image with corrected path -->
+        <img
+        src="/img/whisky.webp"
+        alt="Highland Way Background"
+        class="absolute inset-0 w-full h-full object-cover z-0"
+        sizes="100vw"
+        loading="eager"
+      />
+        
         <!-- Bubble Animation -->
         <div class="absolute inset-0 pointer-events-none z-10">
           <div id="background-wrap" class="absolute inset-0">
@@ -36,8 +39,8 @@
           </div>
         </div>
         <!-- Text -->
-        <div class="absolute inset-0 flex flex-col justify-end items-center px-4 pb-16 md:pb-24 xl:pb-16 z-20">
-          <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white drop-shadow-md text-center leading-tight max-w-xl">
+        <div class="absolute inset-0 flex flex-col justify-start items-center px-4 pt-12  z-20">
+          <h1 class="text-4xl md:text-4xl lg:text-5xl xl:text-6xl font-black text-black drop-shadow-lg text-center leading-tight max-w-xl">
               Experience the journey<br> 
               from the Highlands<br> 
               to your glass.

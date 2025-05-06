@@ -4,11 +4,10 @@
 
 </script>
 
-<section class="relative h-[100vh] flex items-start md:items-center text-white pt-10 md:pt-0">
+<section class="relative h-auto flex items-start md:items-center text-white pt-10 md:pt-0">
   <img 
       src="/img/whisky-hero.webp" 
       sizes="100vw"
-      height="100vh"
       alt="Highland Way scenic landscape"
       class="absolute inset-0 w-full h-full object-cover"
       loading="eager"
