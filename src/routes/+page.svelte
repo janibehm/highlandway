@@ -14,7 +14,7 @@
     <Navigation /> 
   
     <!-- Hero Component -->
-    <div class="w-full h-[75vh] relative overflow-hidden">
+    <div class="w-full h-[90vh] relative overflow-hidden">
         <img 
             src="/img/whisky-hero.webp" 
             alt="Highland Way Background"
@@ -36,7 +36,7 @@
           </div>
         </div>
         <!-- Text -->
-        <div class="absolute inset-0 flex flex-col justify-end items-center px-4 pb-8 md:pb-20 xl:pb-8 z-20">
+        <div class="absolute inset-0 flex flex-col justify-end items-center px-4 pb-16 md:pb-24 xl:pb-16 z-20">
           <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white drop-shadow-md text-center leading-tight max-w-xl">
               Experience the journey<br> 
               from the Highlands<br> 
