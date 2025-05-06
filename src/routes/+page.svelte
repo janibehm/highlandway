@@ -9,7 +9,7 @@
 </script>
   
   
-<main class="w-full flex flex-col bg-black">
+<main class="w-full flex flex-col bg-black overflow-y-auto min-h-screen">
     <!-- Navigation Component -->
     <Navigation /> 
   
@@ -18,10 +18,10 @@
         <img 
             src="/img/whisky-hero.webp" 
             alt="Highland Way Background"
-            class="absolute inset-0 w-full h-full object-cover"
+            class="absolute inset-0 w-full h-full object-cover z-0"
         />
         <!-- Bubble Animation -->
-        <div class="absolute inset-0 pointer-events-none">
+        <div class="absolute inset-0 pointer-events-none z-10">
           <div id="background-wrap" class="absolute inset-0">
             <div class="bubble x1"></div>
             <div class="bubble x2"></div>
@@ -36,14 +36,15 @@
           </div>
         </div>
 
-<!-- Text -->
-<div class="absolute inset-0 flex flex-col justify-end items-center px-4 pb-12 md:pb-16">
-  <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white drop-shadow-md text-center leading-tight max-w-xl">
-      Experience the journey<br> 
-      from the Highlands<br> 
-      to your glass.
-  </h1>
-</div>
+        <!-- Text -->
+        <div class="absolute inset-0 flex flex-col justify-end items-center px-4 pb-12 md:pb-16 z-20">
+          <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white drop-shadow-md text-center leading-tight max-w-xl">
+              Experience the journey<br> 
+              from the Highlands<br> 
+              to your glass.
+          </h1>
+        </div>
+    </div>
 
     <!-- CTA Component -->
     <div class="w-full flex justify-center">
@@ -93,14 +94,14 @@
 
 <style>
  #background-wrap {
-    /* Change from fixed to absolute */
     position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
     top: 0;
-    /* Change z-index to positive */
     z-index: 1;
+    overflow: hidden; /* Contain bubbles within this div */
+    pointer-events: none; /* Ensure clicks pass through to elements below */
 }
 
 /* KEYFRAMES */
@@ -365,5 +366,19 @@
         rgba(190, 95, 35, 0.8) 50%,
         rgba(200, 100, 30, 0.7) 100%
     );
+}
+
+/* Ensure page scrolling works */
+:global(html, body) {
+    height: auto;
+    overflow-y: auto;
+    position: relative;
+}
+
+:global(body) {
+    background-color: black; /* Ensure body background is black */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 </style>
