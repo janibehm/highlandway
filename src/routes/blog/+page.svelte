@@ -2,6 +2,8 @@
   import Navigation from '$lib/components/Navigation.svelte';
   import Footer from '$lib/components/Footer.svelte';
   import { urlFor } from '$lib/sanity';
+  import { onMount } from 'svelte';
+  import { browser } from '$app/environment';
   
   export let data: { posts?: Array<{ title: string; excerpt?: string; slug: { current: string }; publishedAt?: string; mainImage?: { asset?: { url?: string }; alt?: string } }> };
   const { posts = [] } = data;
@@ -16,8 +18,31 @@
       day: 'numeric' 
     });
   }
-</script>
 
+  // Handle navigation to blog post
+  function navigateToBlogPost(slug: string) {
+    if (browser) {
+      // Save current scroll position before navigating
+      localStorage.setItem('blogScrollPos', window.scrollY.toString());
+      window.location.href = `/blog/${slug}`;
+    }
+  }
+
+  onMount(() => {
+    if (browser) {
+      // Restore scroll position if returning from an article
+      const savedScrollPos = localStorage.getItem('blogScrollPos');
+      if (savedScrollPos) {
+        // Small delay to ensure content is loaded
+        setTimeout(() => {
+          window.scrollTo(0, parseInt(savedScrollPos, 10));
+          // Clear the saved position after restoring it
+          localStorage.removeItem('blogScrollPos');
+        }, 100);
+      }
+    }
+  });
+</script>
 
 <main class="w-full flex flex-col bg-black text-white">
   <Navigation />
@@ -53,12 +78,11 @@
             <div class="p-6">
               <span class="text-sm text-gray-400">{formatDate(post.publishedAt || new Date().toISOString())}</span>
               <h2 class="text-2xl font-playfair mt-2 mb-3">{post.title}</h2>
-              <!-- Display excerpt if available, otherwise show a default message -->
               <p class="mb-4">{post.excerpt || "Read more about this Highland Way journal entry..."}</p>
               <button 
                 type="button"
                 class="text-primary hover:text-primary-hover cursor-pointer bg-transparent border-none p-0"
-                on:click={() => window.location.href = `/blog/${post.slug.current}`}
+                on:click={() => navigateToBlogPost(post.slug.current)}
               >
                 Read More →
               </button>
