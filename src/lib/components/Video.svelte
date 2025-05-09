@@ -67,24 +67,26 @@
 </script>
 
 <div class="w-full flex justify-center relative" bind:this={containerElement}>
-  <!-- Poster background that loads immediately -->
-  <div 
-    class="absolute inset-0 w-[90vw] md:w-[80vw] xl:w-[50vw] h-[50vh] md:h-[75vh] xl:h-[95vh] rounded-lg shadow-lg bg-cover bg-center z-0"
-    style="background-image: url('{posterSrc}');">
+  <div class="relative w-[90vw] md:w-[80vw] xl:w-[50vw] h-[50vh] md:h-[75vh] xl:h-[95vh] overflow-hidden rounded-lg shadow-lg">
+    <!-- Poster background that loads immediately -->
+    <div 
+      class="absolute inset-0 w-full h-full bg-cover bg-center z-0"
+      style="background-image: url('{posterSrc}');">
+    </div>
+    
+    <!-- Video element (lazy loaded) -->
+    <video
+      bind:this={videoElement}
+      class="absolute inset-0 w-full h-full object-cover z-10"
+      data-src={videoSrc}
+      poster={posterSrc}
+      autoplay
+      muted
+      playsinline
+      preload="none"
+    >
+    </video>
   </div>
-  
-  <!-- Video element (lazy loaded) -->
-  <video
-    bind:this={videoElement}
-    class="w-[90vw] md:w-[80vw] xl:w-[50vw] h-[50vh] md:h-[75vh] xl:h-[95vh] rounded-lg shadow-lg object-cover relative z-10"
-    data-src={videoSrc}
-    poster={posterSrc}
-    autoplay
-    muted
-    playsinline
-    preload="none"
-  >
-  </video>
 </div>
 
 
