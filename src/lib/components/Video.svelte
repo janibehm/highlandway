@@ -1,9 +1,12 @@
 <script lang="ts">
   import { onMount } from "svelte";
   export let videoSrc = "/videos/whisky_club.mp4";
+  export let posterSrc = "/img/logo.webp";
 
   let videoElement = null as HTMLVideoElement | null;
   let videoLoaded = false;
+  let containerElement: HTMLDivElement;
+  let posterLoaded = false;
 
   // Function to load the video source
   function loadVideo() {
@@ -31,8 +34,22 @@
     });
   }
 
-  // Set up IntersectionObserver
+  // Preload the poster image
+  function preloadPosterImage() {
+    if (!posterLoaded) {
+      const img = new Image();
+      img.onload = () => {
+        posterLoaded = true;
+      };
+      img.src = posterSrc;
+    }
+  }
+
+  // Set up IntersectionObserver and preload poster
   onMount(() => {
+    // Preload the poster image immediately
+    preloadPosterImage();
+    
     const observer = new IntersectionObserver(handleIntersection, {
       threshold: 0.1, // Lower threshold to start loading earlier
       rootMargin: "100px", // Start loading when within 100px of viewport
@@ -49,12 +66,19 @@
   });
 </script>
 
-<div class="w-full flex justify-center relative">
+<div class="w-full flex justify-center relative" bind:this={containerElement}>
+  <!-- Poster background that loads immediately -->
+  <div 
+    class="absolute inset-0 w-[90vw] md:w-[80vw] xl:w-[50vw] h-[50vh] md:h-[75vh] xl:h-[95vh] rounded-lg shadow-lg bg-cover bg-center z-0"
+    style="background-image: url('{posterSrc}');">
+  </div>
+  
+  <!-- Video element (lazy loaded) -->
   <video
     bind:this={videoElement}
-    class="w-[90vw] md:w-[80vw] xl:w-[50vw] h-[50vh] md:h-[75vh] xl:h-[95vh] rounded-lg shadow-lg object-cover"
+    class="w-[90vw] md:w-[80vw] xl:w-[50vw] h-[50vh] md:h-[75vh] xl:h-[95vh] rounded-lg shadow-lg object-cover relative z-10"
     data-src={videoSrc}
-    poster="/img/logo.webp"
+    poster={posterSrc}
     autoplay
     muted
     playsinline
