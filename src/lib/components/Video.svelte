@@ -49,11 +49,12 @@
   });
 </script>
 
-<div class="w-full flex justify-center">
+<div class="w-full flex justify-center relative">
   <video
     bind:this={videoElement}
     class="w-[90vw] md:w-[80vw] xl:w-[50vw] h-[50vh] md:h-[75vh] xl:h-[95vh] rounded-lg shadow-lg object-cover"
     data-src={videoSrc}
+    poster="/static/img/logo.webp"
     autoplay
     muted
     playsinline
