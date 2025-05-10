@@ -195,9 +195,9 @@
     left: -5%;
     top: 5%;
     
-    -webkit-transform: scale(0.15);
-    -moz-transform: scale(0.15);
-    transform: scale(0.15);
+    -webkit-transform: scale(0.1);
+    -moz-transform: scale(0.1);
+    transform: scale(0.1);
   }
 
   .x2 {
@@ -208,9 +208,9 @@
     left: 5%;
     top: 80%;
     
-    -webkit-transform: scale(0.1);
-    -moz-transform: scale(0.1);
-    transform: scale(0.1);
+    -webkit-transform: scale(0.07);
+    -moz-transform: scale(0.07);
+    transform: scale(0.07);
   }
 
   .x3 {
@@ -221,9 +221,9 @@
     left: 10%;
     top: 40%;
     
-    -webkit-transform: scale(0.15);
-    -moz-transform: scale(0.15);
-    transform: scale(0.15);
+    -webkit-transform: scale(0.1);
+    -moz-transform: scale(0.1);
+    transform: scale(0.1);
   }
 
   .x4 {
@@ -234,9 +234,9 @@
     left: 20%;
     top: 0;
     
-    -webkit-transform: scale(0.1);
-    -moz-transform: scale(0.1);
-    transform: scale(0.1);
+    -webkit-transform: scale(0.07);
+    -moz-transform: scale(0.07);
+    transform: scale(0.07);
   }
 
   .x5 {
@@ -247,9 +247,9 @@
     left: 30%;
     top: 50%;
     
-    -webkit-transform: scale(0.15);
-    -moz-transform: scale(0.15);
-    transform: scale(0.15);
+    -webkit-transform: scale(0.1);
+    -moz-transform: scale(0.1);
+    transform: scale(0.1);
   }
 
   .x6 {
@@ -260,9 +260,9 @@
     left: 50%;
     top: 0;
     
-    -webkit-transform: scale(0.15);
-    -moz-transform: scale(0.15);
-    transform: scale(0.15);
+    -webkit-transform: scale(0.1);
+    -moz-transform: scale(0.1);
+    transform: scale(0.1);
   }
 
   .x7 {
@@ -273,9 +273,9 @@
     left: 65%;
     top: 70%;
     
-    -webkit-transform: scale(0.1);
-    -moz-transform: scale(0.1);
-    transform: scale(0.1);
+    -webkit-transform: scale(0.07);
+    -moz-transform: scale(0.07);
+    transform: scale(0.07);
   }
 
   .x8 {
@@ -286,9 +286,9 @@
     left: 80%;
     top: 10%;
     
-    -webkit-transform: scale(0.15);
-    -moz-transform: scale(0.15);
-    transform: scale(0.15);
+    -webkit-transform: scale(0.1);
+    -moz-transform: scale(0.1);
+    transform: scale(0.1);
   }
 
   .x9 {
@@ -299,9 +299,9 @@
     left: 90%;
     top: 50%;
     
-    -webkit-transform: scale(0.15);
-    -moz-transform: scale(0.15);
-    transform: scale(0.15);
+    -webkit-transform: scale(0.1);
+    -moz-transform: scale(0.1);
+    transform: scale(0.1);
   }
 
   .x10 {
@@ -312,9 +312,9 @@
     left: 80%;
     top: 80%;
     
-    -webkit-transform: scale(0.1);
-    -moz-transform: scale(0.1);
-    transform: scale(0.1);
+    -webkit-transform: scale(0.07);
+    -moz-transform: scale(0.07);
+    transform: scale(0.07);
   }
 
   /* OBJECTS */
