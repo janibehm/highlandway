@@ -87,17 +87,26 @@
         <h1 class="text-4xl md:text-5xl font-playfair mb-8">{post.title}</h1>
         
         {#if post.mainImage}
-          <img 
-            src={urlFor(post.mainImage)
-              .width(1600)
-              .height(900)
-              .format('webp')
-              .quality(90)
-              .url()}
-            alt={post.mainImage.alt || post.title} 
-            class="w-full h-auto rounded-lg mb-8"
-            loading="eager"
-          >
+            <img 
+          src={urlFor(post.mainImage)
+    
+          .width(1600)
+            .height(900)
+            .format('webp')
+            .quality(85)
+            .url()}
+          alt={post.mainImage.alt || post.title} 
+          class="w-full h-auto rounded-lg mb-8"
+          loading="lazy"
+          decoding="async"
+          width="1600"
+          height="900"
+        />
+        {:else}
+          <div class="bg-gray-800 h-64 flex items-center justify-center rounded-lg mb-8">
+            <span class="text-gray-500">No image available</span>
+          </div>
+
         {/if}
       </div>
       
