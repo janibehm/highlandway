@@ -47,6 +47,11 @@
   });
 </script>
 
+<svelte:head>
+  <title>Highland Way Journal - Blog</title>
+  <meta name="description" content="Read the latest stories, insights, and news from Highland Way whisky. Discover the craft, heritage, and passion behind our Virginia Highland Whisky." />
+</svelte:head>
+
 <main class="w-full flex flex-col bg-black text-white">
   <Navigation />
   

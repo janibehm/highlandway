@@ -41,6 +41,11 @@
     });
 </script>
 
+<svelte:head>
+    <title>Highland Way - Premium Virginia Highland Whisky</title>
+    <meta name="description" content="Experience the exceptional craftsmanship and rich tradition of Highland whisky. Our Virginia Highland Whisky embodies centuries of Scottish distilling expertise with a modern American twist." />
+</svelte:head>
+
 <div id="smooth-content">
     <div id="smooth-content-inner">
         {@render children()}
