@@ -23,7 +23,7 @@ describe('Sanity Functions', () => {
     
     // Mock the client.fetch method
     const { client } = await import('./sanity');
-    vi.mocked(client.fetch).mockResolvedValue(mockPosts);
+    vi.mocked(client.fetch).mockResolvedValue({ ms: 1, result: mockPosts });
     
     const posts = await getPosts();
     expect(posts).toEqual(mockPosts);
