@@ -3,10 +3,14 @@
   import { urlFor } from '$lib/sanity';
   import { onMount } from 'svelte';
   import { browser } from '$app/environment';
-  
-  export let data: { posts?: Array<{ title: string; excerpt?: string; slug: { current: string }; publishedAt?: string; mainImage?: { asset?: { url?: string }; alt?: string } }> };
-  const { posts = [] } = data;
-  console.log("Received posts:", posts); // Add this for debugging
+  import type { Post } from '$lib/parsers/postParser';
+
+
+  export let data: { posts: Post[] };
+
+  const { posts } = data;
+
+  console.log("Received posts:", posts); 
   
   // Format date for display
   function formatDate(dateString: string) {
@@ -57,18 +61,8 @@
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {#each posts as post}
           <div class="bg-secondary-bg bg-opacity-10 rounded-lg overflow-hidden">
-            {#if post.mainImage}
-              <img 
-                src={urlFor(post.mainImage)
-                  .width(600)
-                  .height(400)
-                  .format('webp')
-                  .quality(85)
-                  .url()}
-                alt={post.mainImage.alt || post.title} 
-                class="w-full h-56 object-cover"
-                loading="lazy"
-              >
+           {#if post.mainImage?.asset?.url}
+          <img src={urlFor(post.mainImage).width(600).height(400).url()} alt={post.mainImage.alt || post.title} />
             {:else}
               <div class="w-full h-56 bg-gray-800 flex items-center justify-center">
                 <span>No image</span>
@@ -81,7 +75,7 @@
               <button 
                 type="button"
                 class="text-primary hover:text-primary-hover cursor-pointer bg-transparent border-none p-0"
-                on:click={() => navigateToBlogPost(post.slug.current)}
+                on:click={() => post.slug?.current && navigateToBlogPost(post.slug.current)}
               >
                 Read More →
               </button>

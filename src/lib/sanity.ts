@@ -1,11 +1,13 @@
+// src/lib/sanity.ts
 import { createClient } from '@sanity/client';
 import imageUrlBuilder from '@sanity/image-url';
 
+// Initialize Sanity client
 export const client = createClient({
-  projectId: 'gesdkajg', 
+  projectId: 'gesdkajg',     
   dataset: 'production',
-  useCdn: true,
-  apiVersion: '2023-05-03',
+  useCdn: true,              
+  apiVersion: '2023-05-03',  
 });
 
 // Initialize the image URL builder
@@ -14,49 +16,6 @@ const builder = imageUrlBuilder(client);
 // Helper function to generate optimized image URLs
 export function urlFor(source: any) {
   return builder.image(source);
-}
-
-// Define interfaces that match your Sanity schema
-export interface Author {
-  _id: string;
-  name: string;
-  slug: {
-    current: string;
-  };
-  image?: {
-    asset: {
-      _id: string;
-      url: string;
-    };
-  };
-}
-
-export interface Category {
-  _id: string;
-  title: string;
-  description?: string;
-}
-
-export interface MainImage {
-  asset: {
-    _id: string;
-    url: string;
-  };
-  alt: string;
-}
-
-export interface Post {
-  _id: string;
-  title: string;
-  slug: {
-    current: string;
-  };
-  author: Author;
-  publishedAt: string;
-  excerpt: string;
-  mainImage: MainImage;
-  categories: Category[];
-  body: any; // For Portable Text - could use a more specific type
 }
 
 // Fetch all blog posts
@@ -76,13 +35,14 @@ export async function getPosts() {
         },
         alt
       },
-      categories[]->{_id, title}
+      categories[]->{_id, title},
+      body
     }`
   );
 }
 
 // Fetch a single post by slug
-export async function getPost(slug: string): Promise<Post | null> {
+export async function getPost(slug: string) {
   return await client.fetch(
     `*[_type == "post" && slug.current == $slug][0] {
       _id,

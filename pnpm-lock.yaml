@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@bou-co/parsing':
+        specifier: ^1.0.21
+        version: 1.0.21
       '@sanity/client':
         specifier: ^6.29.0
         version: 6.29.0
@@ -19,7 +22,7 @@ importers:
         version: 3.0.8(@sveltejs/kit@2.20.4(@sveltejs/vite-plugin-svelte@5.0.3(svelte@5.25.7)(vite@6.2.5(@types/node@22.14.1)(jiti@2.4.2)(lightningcss@1.29.2)))(svelte@5.25.7)(vite@6.2.5(@types/node@22.14.1)(jiti@2.4.2)(lightningcss@1.29.2)))
       lenis:
         specifier: ^1.2.3
-        version: 1.2.3
+        version: 1.2.3(react@19.1.1)
     devDependencies:
       '@eslint/compat':
         specifier: ^1.2.5
@@ -93,6 +96,9 @@ packages:
   '@ampproject/remapping@2.3.0':
     resolution: {integrity: sha512-30iZtAPgz+LTIYoeivqYo853f02jBYSd5uGnGpkFV0M3xOt9aN73erkgYAmZU43x4VfqcnLxW9Kpg3R5LC4YYw==}
     engines: {node: '>=6.0.0'}
+
+  '@bou-co/parsing@1.0.21':
+    resolution: {integrity: sha512-KIcFqXx3uF1EaBmNSCrsH+LvoYZl+QQDliV8Fjj6Eiv4Te1fqVY6dvPqj7DxsHaM9mkeBJVIO2+1UoqUS28HNw==}
 
   '@emnapi/runtime@1.4.3':
     resolution: {integrity: sha512-pBPWdu6MLKROBX05wSNKcNb++m5Er+KQ9QkB+WVM+pW2Kx9hoSrVTnu3BdkI5eBLZoKu/J6mW/B6i6bJB2ytXQ==}
@@ -1742,6 +1748,10 @@ packages:
   queue-microtask@1.2.3:
     resolution: {integrity: sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==}
 
+  react@19.1.1:
+    resolution: {integrity: sha512-w8nqGImo45dmMIfljjMwOGtbmC/mk4CMYhWIicdSflH91J9TyCyczcPFXJzrZ/ZXcgGRFeP6BU0BEJTw6tZdfQ==}
+    engines: {node: '>=0.10.0'}
+
   readable-stream@2.3.8:
     resolution: {integrity: sha512-8p0AUk4XODgIewSi0l8Epjs+EVnWiK7NoDIEGU0HhE7+ZyY8D1IMY7odu5lRrFXGg71L15KG8QrPmum45RTtdA==}
 
@@ -2035,6 +2045,10 @@ snapshots:
     dependencies:
       '@jridgewell/gen-mapping': 0.3.8
       '@jridgewell/trace-mapping': 0.3.25
+
+  '@bou-co/parsing@1.0.21':
+    dependencies:
+      react: 19.1.1
 
   '@emnapi/runtime@1.4.3':
     dependencies:
@@ -3199,7 +3213,9 @@ snapshots:
 
   known-css-properties@0.35.0: {}
 
-  lenis@1.2.3: {}
+  lenis@1.2.3(react@19.1.1):
+    optionalDependencies:
+      react: 19.1.1
 
   levn@0.4.1:
     dependencies:
@@ -3410,6 +3426,8 @@ snapshots:
   punycode@2.3.1: {}
 
   queue-microtask@1.2.3: {}
+
+  react@19.1.1: {}
 
   readable-stream@2.3.8:
     dependencies:

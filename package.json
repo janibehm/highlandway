@@ -43,6 +43,7 @@
 		]
 	},
 	"dependencies": {
+		"@bou-co/parsing": "^1.0.21",
 		"@sanity/client": "^6.29.0",
 		"@sanity/image-url": "^1.1.0",
 		"@sveltejs/adapter-static": "^3.0.8",
