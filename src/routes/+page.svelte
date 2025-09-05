@@ -6,6 +6,10 @@
     import FooterLanding from '$lib/components/FooterLanding.svelte';
     let triggerNode: HTMLElement | null = null; // Reference to the section before the footer
 </script>
+
+<svelte:head>
+  <link rel="preload" href="/img/whisky.webp" as="image" media="(min-width: 769px)">
+</svelte:head>
   
 <div class="page-wrapper">
   <main class="w-full flex flex-col bg-black relative">
