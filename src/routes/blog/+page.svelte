@@ -3,14 +3,33 @@
   import { urlFor } from '$lib/sanity';
   import { onMount } from 'svelte';
   import { browser } from '$app/environment';
-  import type { Post } from '$lib/parsers/postParser';
+  import type { Post } from '$lib/types/post';
+  import { cachePostList, getCachedPostList, cachePost } from '$lib/utils/cache';
 
 
   export let data: { posts: Post[] };
 
   const { posts } = data;
 
-  console.log("Received posts:", posts); 
+  onMount(() => {
+    if (browser) {
+      // Cache the post list
+      cachePostList(posts);
+      // Cache individual posts
+      posts.forEach(post => cachePost(post));
+
+      // Restore scroll position if returning from an article
+      const savedScrollPos = localStorage.getItem('blogScrollPos');
+      if (savedScrollPos) {
+        // Small delay to ensure content is loaded
+        setTimeout(() => {
+          window.scrollTo(0, parseInt(savedScrollPos, 10));
+          // Clear the saved position after restoring it
+          localStorage.removeItem('blogScrollPos');
+        }, 100);
+      }
+    }
+  });
   
   // Format date for display
   function formatDate(dateString: string) {

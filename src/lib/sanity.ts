@@ -1,9 +1,12 @@
 // src/lib/sanity.ts
-import { createClient } from '@sanity/client';
+import { createClient, type SanityClient } from '@sanity/client';
 import imageUrlBuilder from '@sanity/image-url';
+import type { SanityImageSource } from '@sanity/image-url/lib/types/types';
+import type { ImageUrlBuilder } from '@sanity/image-url/lib/types/builder';
+import type { Post } from '$lib/types/post';
 
 // Initialize Sanity client
-export const client = createClient({
+export const client: SanityClient = createClient({
   projectId: 'gesdkajg',     
   dataset: 'production',
   useCdn: true,              
@@ -11,21 +14,32 @@ export const client = createClient({
 });
 
 // Initialize the image URL builder
-const builder = imageUrlBuilder(client);
+const builder: ImageUrlBuilder = imageUrlBuilder(client);
 
 // Helper function to generate optimized image URLs
-export function urlFor(source: any) {
+export function urlFor(source: SanityImageSource): ImageUrlBuilder {
   return builder.image(source);
 }
 
-// Fetch all blog posts
-export async function getPosts() {
-  return await client.fetch(
-    `*[_type == "post"] | order(publishedAt desc) {
+// Fetch all blog posts with validation in the query
+export async function getPosts(): Promise<Post[]> {
+  return await client.fetch<Post[]>(
+    `*[
+      _type == "post" && 
+      !(_id match "*_inherit*") && 
+      !defined(title._invalid) && 
+      defined(slug.current) && 
+      defined(publishedAt)
+    ] | order(publishedAt desc) {
       _id,
       title,
-      slug,
-      author->{_id, name, slug, image{asset->{_id, url}}},
+      "slug": { "current": slug.current },
+      author->{
+        _id, 
+        name, 
+        "slug": { "current": slug.current },
+        image{asset->{_id, url}}
+      },
       publishedAt,
       excerpt,
       mainImage {
@@ -42,13 +56,25 @@ export async function getPosts() {
 }
 
 // Fetch a single post by slug
-export async function getPost(slug: string) {
-  return await client.fetch(
-    `*[_type == "post" && slug.current == $slug][0] {
+export async function getPost(slug: string): Promise<Post | null> {
+  return await client.fetch<Post | null>(
+    `*[
+      _type == "post" && 
+      slug.current == $slug && 
+      !(_id match "*_inherit*") && 
+      !defined(title._invalid) && 
+      defined(slug.current) && 
+      defined(publishedAt)
+    ][0] {
       _id,
       title,
-      slug,
-      author->{_id, name, slug, image{asset->{_id, url}}},
+      "slug": { "current": slug.current },
+      author->{
+        _id, 
+        name, 
+        "slug": { "current": slug.current },
+        image{asset->{_id, url}}
+      },
       publishedAt,
       excerpt,
       mainImage {

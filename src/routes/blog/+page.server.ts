@@ -1,27 +1,31 @@
-// src/routes/blog/+page.ts
 import { getPosts } from '$lib/sanity';
-import { postParser, type Post } from '$lib/parsers/postParser';
+import type { Post } from '$lib/types/post';
+
+// Server-side memory cache
+let postsCache: { data: Post[]; timestamp: number } | null = null;
+const CACHE_DURATION = 1000 * 60 * 15; // 15 minutes
 
 export const prerender = true;
 
 export async function load(): Promise<{ posts: Post[] }> {
   try {
-    const rawPosts = await getPosts();
-
-    // Parse posts safely with manual parsing
-    const posts: Post[] = [];
-    
-    for (const raw of rawPosts ?? []) {
-      try {
-        const parsedPost = postParser(raw);
-        posts.push(parsedPost);
-      } catch (err) {
-        console.warn('Skipping invalid post:', raw._id || 'unknown', err);
-        // Skip invalid posts silently
-      }
+    // Check server-side cache first
+    const now = Date.now();
+    if (postsCache && (now - postsCache.timestamp) < CACHE_DURATION) {
+      console.log('Serving posts from server cache');
+      return { posts: postsCache.data };
     }
 
-    return { posts };
+    // Fetch fresh data if cache is missing or expired
+    const posts = await getPosts();
+
+    // Update cache
+    postsCache = {
+      data: posts ?? [],
+      timestamp: now
+    };
+
+    return { posts: posts ?? [] };
   } catch (error) {
     console.error('Error loading posts:', error);
     return { posts: [] };
